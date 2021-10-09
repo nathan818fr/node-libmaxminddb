@@ -1,0 +1,59 @@
+{
+  "name": "libmaxminddb",
+  "version": "0.0.1-dev",
+  "description": "Node.js bindings for libmaxminddb (to read MaxMind DB with the best performance - using memory-mapped file!)",
+  "keywords": [
+    "maxmind",
+    "mmdb",
+    "geoip",
+    "geoip2",
+    "geolite2"
+  ],
+  "author": "Nathan Poirier <nathan@poirier.io>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/nathan818fr/node-libmaxminddb",
+  "repository": "https://github.com/nathan818fr/node-libmaxminddb",
+  "files": [
+    "binding.js",
+    "install/**",
+    "lib/**",
+    "src/**"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "install": "node ./install/prebuild.js && node ./binding.js && node-gyp rebuild",
+    "test": "jest ./test/lib",
+    "lint": "yarn run lint:js && yarn run lint:cpp",
+    "lint:js": "yarn run lint:js:prettier && yarn run lint:js:eslint",
+    "lint:js:prettier": "prettier -c ./install ./lib *.js *.json",
+    "lint:js:eslint": "eslint ./lib",
+    "lint:cpp": "yarn run lint:cpp:clang && yarn run lint:cpp:cpplint",
+    "lint:cpp:clang": "clang-format --dry-run --Werror ./src/**.cc ./src/**.h",
+    "lint:cpp:cpplint": "python3 ./tools/cpplint.py --linelength=120 --filter=-legal/copyright,-readability/todo,-build/include_subdir --root=src --recursive ./src",
+    "format": "yarn run format:js && yarn run format:cpp",
+    "format:js": "prettier -w ./install ./lib *.js *.json",
+    "format:cpp": "clang-format --verbose -i ./src/**.cc ./src/**.h"
+  },
+  "dependencies": {
+    "detect-libc": "^1.0.3",
+    "nan": "^2.15.0",
+    "simple-get": "^4.0.0",
+    "tar-fs": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.3",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "clang-format": "^1.5.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-jest": "^24.5.2",
+    "jest": "^27.2.4",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  },
+  "config": {
+    "libmaxminddb_ignore_global": false,
+    "libmaxminddb_version": "1.6.0-1"
+  }
+}

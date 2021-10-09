@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Decode MaxMind-DB-test-decoder.mmdb 1`] = `
+Object {
+  "entries": Array [
+    Object {
+      "array": Array [
+        1,
+        2,
+        3,
+      ],
+      "boolean": true,
+      "bytes": Object {
+        "data": Array [
+          0,
+          0,
+          0,
+          42,
+        ],
+        "type": "Buffer",
+      },
+      "double": 42.123456,
+      "float": 1.100000023841858,
+      "int32": -268435456,
+      "map": Object {
+        "mapX": Object {
+          "arrayX": Array [
+            7,
+            8,
+            9,
+          ],
+          "utf8_stringX": "hello",
+        },
+      },
+      "uint128": 1329227995784915872903807060280344576n,
+      "uint16": 100,
+      "uint32": 268435456,
+      "uint64": 1152921504606846976n,
+      "utf8_string": "unicode! ☯ - ♫",
+    },
+    Object {
+      "array": Array [],
+      "boolean": false,
+      "bytes": Object {
+        "data": Array [],
+        "type": "Buffer",
+      },
+      "double": 0,
+      "float": 0,
+      "int32": 0,
+      "map": Object {},
+      "uint128": 0n,
+      "uint16": 0,
+      "uint32": 0,
+      "uint64": 0n,
+      "utf8_string": "",
+    },
+    Object {
+      "double": Infinity,
+      "float": Infinity,
+      "int32": 2147483647,
+      "uint128": 340282366920938463463374607431768211455n,
+      "uint16": 65535,
+      "uint32": 4294967295,
+      "uint64": 18446744073709551615n,
+    },
+  ],
+  "metadata": Object {
+    "binaryFormatMajorVersion": 2,
+    "binaryFormatMinorVersion": 0,
+    "buildEpoch": 1628006507,
+    "databaseType": "MaxMind DB Decoder Test",
+    "description": Array [
+      Object {
+        "description": "MaxMind DB Decoder Test database - contains every MaxMind DB data type",
+        "language": "en",
+      },
+    ],
+    "ipVersion": 6,
+    "languages": Array [
+      "en",
+    ],
+    "nodeCount": 426,
+    "recordSize": 24,
+  },
+}
+`;
+
+exports[`Decode MaxMind-DB-test-metadata-pointers.mmdb 1`] = `
+Object {
+  "entries": Array [],
+  "metadata": Object {
+    "binaryFormatMajorVersion": 2,
+    "binaryFormatMinorVersion": 0,
+    "buildEpoch": 1628006508,
+    "databaseType": "Lots of pointers in metadata",
+    "description": Array [
+      Object {
+        "description": "Lots of pointers in metadata",
+        "language": "en",
+      },
+      Object {
+        "description": "Lots of pointers in metadata",
+        "language": "es",
+      },
+      Object {
+        "description": "Lots of pointers in metadata",
+        "language": "zh",
+      },
+    ],
+    "ipVersion": 6,
+    "languages": Array [
+      "en",
+      "es",
+      "zh",
+    ],
+    "nodeCount": 336,
+    "recordSize": 24,
+  },
+}
+`;
+
+exports[`Decode MaxMind-DB-test-nested.mmdb 1`] = `
+Object {
+  "entries": Array [
+    Object {
+      "map1": Object {
+        "map2": Object {
+          "array": Array [
+            Object {
+              "map3": Object {
+                "a": 1,
+                "b": 2,
+                "c": 3,
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
+  "metadata": Object {
+    "binaryFormatMajorVersion": 2,
+    "binaryFormatMinorVersion": 0,
+    "buildEpoch": 1628006507,
+    "databaseType": "MaxMind DB Nested Data Structures",
+    "description": Array [
+      Object {
+        "description": "MaxMind DB Nested Data Structures Test database - contains deeply nested map/array structures",
+        "language": "en",
+      },
+    ],
+    "ipVersion": 6,
+    "languages": Array [
+      "en",
+    ],
+    "nodeCount": 573,
+    "recordSize": 24,
+  },
+}
+`;
+
+exports[`Decode MaxMind-DB-test-pointer-decoder.mmdb 1`] = `
+Object {
+  "entries": Array [
+    Object {
+      "array": Array [
+        1,
+        2,
+        3,
+      ],
+      "arrayX": Array [
+        1,
+        2,
+        3,
+        4,
+      ],
+      "boolean": 1,
+      "booleanX": false,
+      "bytes": Object {
+        "data": Array [
+          0,
+          0,
+          0,
+          42,
+        ],
+        "type": "Buffer",
+      },
+      "double": 42.123456,
+      "float": 1.100000023841858,
+      "int32": -268435456,
+      "map": Object {
+        "mapX": Object {
+          "arrayX": Array [
+            7,
+            8,
+            9,
+          ],
+          "utf8_stringX": "hello",
+        },
+      },
+      "mapXX": Object {
+        "arrayX": Array [
+          7,
+          8,
+          9,
+          10,
+        ],
+        "booleanX": false,
+        "utf8_stringX": "hello",
+      },
+      "uint128": 1329227995784915872903807060280344576n,
+      "uint16": 100,
+      "uint32": 268435456,
+      "uint64": 1152921504606846976n,
+      "utf8_string": "unicode! ☯ - ♫",
+    },
+    Object {
+      "array": Array [
+        1,
+        2,
+        3,
+      ],
+      "boolean": false,
+      "bytes": Object {
+        "data": Array [
+          0,
+          0,
+          0,
+          42,
+        ],
+        "type": "Buffer",
+      },
+      "double": 42.123456,
+      "float": 1.100000023841858,
+      "int32": -268435456,
+      "map": Object {
+        "mapX": Object {
+          "arrayX": Array [
+            7,
+            8,
+            9,
+          ],
+          "utf8_stringX": "hello",
+        },
+      },
+      "uint128": 1329227995784915872903807060280344576n,
+      "uint16": 100,
+      "uint32": 268435456,
+      "uint64": 1152921504606846976n,
+      "utf8_string": "unicode! ☯ - ♫",
+    },
+  ],
+  "metadata": Object {
+    "binaryFormatMajorVersion": 2,
+    "binaryFormatMinorVersion": 0,
+    "buildEpoch": 1628006507,
+    "databaseType": "MaxMind DB Decoder Test",
+    "description": Array [
+      Object {
+        "description": "MaxMind DB Decoder Test database - contains every MaxMind DB data type",
+        "language": "en",
+      },
+    ],
+    "ipVersion": 6,
+    "languages": Array [
+      "en",
+    ],
+    "nodeCount": 189,
+    "recordSize": 24,
+  },
+}
+`;

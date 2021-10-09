@@ -18,7 +18,7 @@ inline v8::Local<v8::String> NewStr(const char *str) {
 }
 
 inline v8::Local<v8::String> NewStr(const char *str, uint32_t length) {
-    if (length > std::numeric_limits<int>::max()) {
+    if (length > static_cast<uint32_t>(std::numeric_limits<int>::max())) {
         return v8::MaybeLocal<v8::String>().ToLocalChecked();
     }
     return Nan::New(str, static_cast<int>(length)).ToLocalChecked();

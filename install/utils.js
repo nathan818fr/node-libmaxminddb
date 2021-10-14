@@ -114,7 +114,11 @@ function extractTarGz(archiveFile, dstDir, opts) {
 }
 
 function spawnSync(command) {
-    return cp.spawnSync(command, {encoding: 'utf8', shell: true, stdio: ['ignore', 'pipe', 'inherit']}).stdout || '';
+    const debug = process.env.DEBUG === '1' || process.env.DEBUG === 'libmaxminddb';
+    return (
+        cp.spawnSync(command, {encoding: 'utf8', shell: true, stdio: ['ignore', 'pipe', debug ? 'inherit' : 'ignore']})
+            .stdout || ''
+    );
 }
 
 function shellEsc(arg) {

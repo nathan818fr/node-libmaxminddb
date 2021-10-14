@@ -1,6 +1,7 @@
 ### App
 /binding.gyp
 /vendor
+/typedoc
 
 ### Node
 # Logs

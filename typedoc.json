@@ -1,0 +1,9 @@
+{
+  "out": "typedoc",
+  "name": "node-libmaxminddb Documentation",
+  "entryPoints": ["lib/index.d.ts"],
+  "excludePrivate": true,
+  "sort": ["source-order"],
+  "disableSources": true,
+  "githubPages": true
+}

@@ -364,9 +364,13 @@ Local<Value> MmdbReader::EntryDataListToValue(MmdbEntryDataListHolder &list, int
         }
         case MMDB_DATA_TYPE_UINT128: {
 #if MMDB_UINT128_IS_BYTE_ARRAY
-            // TODO: Test this code w/ different endianess, etc
-            uint64_t high = MmdbHelpers::Uint8ArrayToUint64(list->entry_data.uint128 + 8);
+#ifdef NODE_LIBMAXMINDDB_IS_LITTLE_ENDIAN
+            uint64_t high = MmdbHelpers::Uint8ArrayToUint64(list->entry_data.uint128);
+            uint64_t low = MmdbHelpers::Uint8ArrayToUint64(list->entry_data.uint128 + 8);
+#else
             uint64_t low = MmdbHelpers::Uint8ArrayToUint64(list->entry_data.uint128);
+            uint64_t high = MmdbHelpers::Uint8ArrayToUint64(list->entry_data.uint128 + 8);
+#endif
 #else
             uint64_t high = static_cast<uint64_t>(list->entry_data.uint128 >> 64);
             uint64_t low = static_cast<uint64_t>(list->entry_data.uint128);

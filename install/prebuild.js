@@ -2,20 +2,20 @@ const path = require('path');
 const {fileURLToPath} = require('url');
 const {inspect} = require('util');
 const {logInstallError} = require('./log');
-const {fs, semverGte, urlToUniqueFilename, httpDownload, extractTarGz, urlWithoutSecrets} = require('./utils');
+const {fs, semverGte, urlToUniqueFilename, httpDownload, rmrf, extractTarGz, urlWithoutSecrets} = require('./utils');
 const varsBuild = require('./vars-build');
-const {
-    platform,
-    globalLibmaxminddbVersion,
-    useGlobalLibmaxminddb,
-    prebuildLibmaxminddbUrl,
-    vendorPath,
-    cachePath,
-    libC,
-} = varsBuild;
 
 async function main() {
-    console.log('libmaxminddb environment:', inspect(varsBuild, false, null, true));
+    const {
+        platform,
+        globalLibmaxminddbVersion,
+        useGlobalLibmaxminddb,
+        prebuildLibmaxminddbUrl,
+        vendorPath,
+        cachePath,
+        libC,
+    } = varsBuild;
+    console.log('libmaxminddb environment:\n', inspect(varsBuild, false, null, true));
 
     if (useGlobalLibmaxminddb) {
         console.log(`Using globally-installed libmaxminddb v${globalLibmaxminddbVersion}`);
@@ -24,22 +24,25 @@ async function main() {
 
     if (await fs.exists(vendorPath)) {
         console.log(`Using existing vendored libmaxminddb '${vendorPath}'`);
-        checkVendor();
-        return;
+        if (checkVendor(prebuildLibmaxminddbUrl, libC, vendorPath)) {
+            return;
+        } else {
+            console.log('The existing vendored libmaxminddb does not match the requested version!');
+        }
     }
 
     if (prebuildLibmaxminddbUrl) {
         console.log(`Using prebuild libmaxminddb '${prebuildLibmaxminddbUrl}'`);
-        const prebuildFile = await retrieveUrl(prebuildLibmaxminddbUrl);
+        const prebuildFile = await retrieveUrl(prebuildLibmaxminddbUrl, cachePath);
         await extractVendor(prebuildLibmaxminddbUrl, prebuildFile, vendorPath, {strip: 1});
-        checkVendor();
+        checkVendor(prebuildLibmaxminddbUrl, libC, vendorPath);
         return;
     }
 
     throw new Error(`Unable to compile libmaxminddb automatically: there is no prebuild binary for ${platform}.`);
 }
 
-async function retrieveUrl(url) {
+async function retrieveUrl(url, cachePath) {
     if (url.startsWith('file://')) {
         return fileURLToPath(url);
     }
@@ -62,6 +65,7 @@ async function retrieveUrl(url) {
 async function extractVendor(vendorUrl, vendorFile, dstDir, opts) {
     console.log('Extracting ...');
 
+    await rmrf(dstDir);
     await extractTarGz(vendorFile, dstDir, opts);
 
     const vendorContent = JSON.stringify(
@@ -77,7 +81,7 @@ async function extractVendor(vendorUrl, vendorFile, dstDir, opts) {
     console.log(`Done! Extracted to '${dstDir}'`);
 }
 
-function checkVendor() {
+function checkVendor(vendorUrl, libC, vendorPath) {
     if (libC.family) {
         let vendorLibcVersion;
         try {
@@ -93,6 +97,18 @@ function checkVendor() {
             throw new Error(`Incompatible ${libC.family} ${libC.version} (requires >= ${vendorLibcVersion})`);
         }
     }
+
+    let varsVendor;
+    try {
+        varsVendor = JSON.parse(fs.readFileSync(path.join(vendorPath, '_VENDOR.json'), 'utf8'));
+    } catch (err) {
+        throw new Error(
+            `Unable to read vendor variables: ${err.message}.\nTry to delete the vendor folder: '${vendorPath}'`
+        );
+    }
+    console.log('libmaxminddb vendor variables:\n', inspect(varsVendor, false, null, true));
+
+    return varsVendor.publicUrl === urlWithoutSecrets(vendorUrl);
 }
 
 main().catch((err) => {

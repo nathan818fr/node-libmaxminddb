@@ -13,8 +13,10 @@ const fs = {
     ...cbFs,
     copyFile: promisify(cbFs.copyFile),
     exists: promisify(cbFs.exists),
+    lstat: promisify(cbFs.lstat),
     mkdir: promisify(cbFs.mkdir),
     mkdtemp: promisify(cbFs.mkdtemp),
+    readdir: promisify(cbFs.readdir),
     rename: promisify(cbFs.rename),
     unlink: promisify(cbFs.unlink),
     writeFile: promisify(cbFs.writeFile),
@@ -105,6 +107,33 @@ function httpPipe(httpRes, dstStream) {
     });
 }
 
+async function rmrf(p) {
+    let stats;
+    try {
+        stats = await fs.lstat(p);
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            return;
+        }
+        throw err;
+    }
+
+    if (stats.isDirectory()) {
+        let files;
+        try {
+            files = await fs.readdir(p);
+        } catch (err) {
+            if (err.code === 'ENOENT') {
+                return;
+            }
+            throw err;
+        }
+        await Promise.all(files.map((f) => rmrf(path.join(p, f))));
+    }
+
+    return fsSilentUnlink(p);
+}
+
 function extractTarGz(archiveFile, dstDir, opts) {
     return new Promise((resolve, reject) => {
         stream.pipeline(fs.createReadStream(archiveFile), new zlib.Gunzip(), tar.extract(dstDir, opts), (err) =>
@@ -131,6 +160,7 @@ module.exports = {
     urlToUniqueFilename,
     urlWithoutSecrets,
     httpDownload,
+    rmrf,
     extractTarGz,
     spawnSync,
     shellEsc,

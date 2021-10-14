@@ -283,7 +283,12 @@ Local<Value> MmdbReader::EntryDataListToValue(MmdbEntryDataListHolder &list, int
     switch (list->entry_data.type) {
         case MMDB_DATA_TYPE_MAP: {
             uint32_t size = list->entry_data.data_size;
+#if NODE_MAJOR_VERSION >= 12
             Local<Object> ret = Object::New(Nan::GetCurrentContext()->GetIsolate(), Nan::Null(), nullptr, nullptr, 0);
+#else
+            Local<Object> ret = Nan::New<Object>();
+            Nan::SetPrototype(ret, Nan::Null());
+#endif
             for (list.next(); size && list != nullptr; --size) {
                 if (list->entry_data.type != MMDB_DATA_TYPE_UTF8_STRING) {
                     *status = MMDB_INVALID_DATA_ERROR;

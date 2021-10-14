@@ -44,7 +44,7 @@ function urlToUniqueFilename(url) {
     const hash = createHash('sha1')
         .update(formatUrl(url, {auth: false, fragment: false}))
         .digest('hex');
-    const safeFilename = url.pathname.substr(url.pathname.lastIndexOf('/') + 1).replaceAll(/[^a-zA-Z0-9_.-]/g, '');
+    const safeFilename = url.pathname.substr(url.pathname.lastIndexOf('/') + 1).replace(/[^a-zA-Z0-9_.-]/g, '');
     return hash + '_' + safeFilename;
 }
 

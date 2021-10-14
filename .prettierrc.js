@@ -7,7 +7,7 @@ module.exports = {
     bracketSpacing: false,
     overrides: [
         {
-            files: ['*.json'],
+            files: ['*.json', '*.yml'],
             options: {tabWidth: 2},
         },
     ],

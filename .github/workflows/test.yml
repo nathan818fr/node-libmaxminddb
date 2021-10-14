@@ -1,0 +1,34 @@
+---
+name: Test
+
+on:
+  - push
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 16.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        lib-version: [prebuild]
+        include:
+          - node-version: 10.x
+            os: ubuntu-latest
+            lib-version: global
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Install libmaxminddb (with apt)
+        run: |
+          sudo apt-get -y install libmaxminddb-dev
+          echo 'NODE_LIBMAXMINDDB_VERSION=false' >>$GITHUB_ENV
+        if: matrix.lib-version == 'global'
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn test

@@ -26,13 +26,13 @@
     "test": "jest ./test/lib",
     "lint": "yarn run lint:js && yarn run lint:cpp",
     "lint:js": "yarn run lint:js:prettier && yarn run lint:js:eslint",
-    "lint:js:prettier": "prettier -c ./install ./lib ./.github *.js *.json",
+    "lint:js:prettier": "prettier -c ./install ./lib ./.github *.js *.json *.md",
     "lint:js:eslint": "eslint ./lib",
     "lint:cpp": "yarn run lint:cpp:clang && yarn run lint:cpp:cpplint",
     "lint:cpp:clang": "clang-format --dry-run --Werror ./src/**.cc ./src/**.h",
     "lint:cpp:cpplint": "python3 ./tools/cpplint.py --linelength=120 --filter=-legal/copyright,-readability/todo,-build/include_subdir --root=src --recursive ./src",
     "format": "yarn run format:js && yarn run format:cpp",
-    "format:js": "prettier -w ./install ./lib ./.github *.js *.json",
+    "format:js": "prettier -w ./install ./lib ./.github *.js *.json *.md",
     "format:cpp": "clang-format --verbose -i ./src/**.cc ./src/**.h"
   },
   "dependencies": {

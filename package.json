@@ -19,6 +19,9 @@
     "lib/**",
     "src/**"
   ],
+  "engines": {
+    "node": ">=10"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {

@@ -37,7 +37,7 @@
     "format": "yarn run format:js && yarn run format:cpp",
     "format:js": "prettier -w ./install ./lib ./.github ./docs \"*.js\" \"*.json\" \"*.md\"",
     "format:cpp": "clang-format --verbose -i ./src/**.cc ./src/**.h",
-    "release": "yarn run lint && yarn run test && release-it --git.tagName='v${version}'"
+    "release": "yarn run lint && yarn run test && release-it --git.tagName='v${version}' --github.release=true"
   },
   "dependencies": {
     "detect-libc": "^1.0.3",

@@ -17,7 +17,7 @@ npm install libmaxminddb
 
 This package uses the native library libmaxminddb.
 If you have a common system then a prebuilt version will be used.\
-Otherwise look at the [advanced libmaxminddb installation instructions](./docs/install_libmaxminddb.md).
+Otherwise look at the [advanced libmaxminddb installation instructions](https://github.com/nathan818fr/node-libmaxminddb/blob/master/docs/install_libmaxminddb.md).
 
 ## Examples
 
@@ -30,12 +30,13 @@ MmdbReader.open({filename: 'GeoIP2-Country-Test.mmdb'}).then(async (mmdb) => {
 });
 ```
 
-For a more detailed example look at [demo.js](./docs/examples/demo.js) (or [demo.ts](./docs/examples/demo.ts) for TypeScript).
+For a more detailed example look at [demo.js](https://github.com/nathan818fr/node-libmaxminddb/blob/master/docs/examples/demo.js)
+(or [demo.ts](https://github.com/nathan818fr/node-libmaxminddb/blob/master/docs/examples/demo.ts) for TypeScript).
 
 ## Documentation
 
 For a detailed API reference, see:
-[https://nathan818fr.github.io/node-libmaxminddb/](https://nathan818fr.github.io/node-libmaxminddb/classes/MmdbReader.html#open)
+[node-libmaxminddb.nathan818.fr](https://node-libmaxminddb.nathan818.fr/classes/MmdbReader.html#open)
 
 ## Testing
 
@@ -70,4 +71,4 @@ For the versions available, see the [tags on this repository](https://github.com
 ## License
 
 This project is licensed under the Apache-2.0 License.
-See the [LICENSE](./LICENSE) file for details.
+See the [LICENSE](https://github.com/nathan818fr/node-libmaxminddb/blob/master/LICENSE) file for details.

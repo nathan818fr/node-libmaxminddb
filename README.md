@@ -15,6 +15,10 @@ This module provides its own TypeScript declarations (.d.ts).
 npm install libmaxminddb
 ```
 
+This package uses the native library libmaxminddb.
+If you have a common system then a prebuilt version will be used.\
+Otherwise look at the [advanced libmaxminddb installation instructions](./docs/install_libmaxminddb.md).
+
 ## Examples
 
 ```javascript
@@ -26,17 +30,12 @@ MmdbReader.open({filename: 'GeoIP2-Country-Test.mmdb'}).then(async (mmdb) => {
 });
 ```
 
-For a more detailed example look at [demo.js](./docs/examples/demo.js)
-(or [demo.ts](./docs/examples/demo.ts) for TypeScript).
+For a more detailed example look at [demo.js](./docs/examples/demo.js) (or [demo.ts](./docs/examples/demo.ts) for TypeScript).
 
 ## Documentation
 
-For detailed API Documentation, see:
-_TODO_
-
-## Advanced libmaxminddb Installation
-
-_TODO: Explain compilation process, system package usage, prebuild binaries, etc_
+For a detailed API reference, see:
+[https://nathan818fr.github.io/node-libmaxminddb/](https://nathan818fr.github.io/node-libmaxminddb/classes/MmdbReader.html#open)
 
 ## Testing
 

@@ -1,6 +1,6 @@
 {
   "name": "libmaxminddb",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Node.js bindings for libmaxminddb (to read MaxMind DB with the best performance - using memory-mapped file!)",
   "keywords": [
     "maxmind",

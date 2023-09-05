@@ -27,17 +27,17 @@
   "scripts": {
     "install": "node ./install/prebuild.js && node ./binding.js && node-gyp rebuild",
     "test": "jest ./test/lib",
-    "lint": "yarn run lint:js && yarn run lint:cpp",
-    "lint:js": "yarn run lint:js:prettier && yarn run lint:js:eslint",
+    "lint": "npm run lint:js && npm run lint:cpp",
+    "lint:js": "npm run lint:js:prettier && npm run lint:js:eslint",
     "lint:js:prettier": "prettier -c ./install ./lib ./.github ./docs \"*.js\" \"*.json\" \"*.md\"",
     "lint:js:eslint": "eslint ./lib",
-    "lint:cpp": "yarn run lint:cpp:clang && yarn run lint:cpp:cpplint",
+    "lint:cpp": "npm run lint:cpp:clang && npm run lint:cpp:cpplint",
     "lint:cpp:clang": "clang-format --dry-run --Werror ./src/**.cc ./src/**.h",
     "lint:cpp:cpplint": "python3 ./tools/cpplint.py --linelength=120 --filter=-legal/copyright,-readability/todo,-build/include_subdir --root=src --recursive ./src",
-    "format": "yarn run format:js && yarn run format:cpp",
+    "format": "npm run format:js && npm run format:cpp",
     "format:js": "prettier -w ./install ./lib ./.github ./docs \"*.js\" \"*.json\" \"*.md\"",
     "format:cpp": "clang-format --verbose -i ./src/**.cc ./src/**.h",
-    "release": "yarn run lint && yarn run test && release-it --git.tagName='v${version}' --github.release=true"
+    "release": "npm run lint && npm run test && release-it --git.tagName='v${version}' --github.release=true"
   },
   "dependencies": {
     "detect-libc": "^1.0.3",
@@ -54,7 +54,7 @@
     "eslint-plugin-jest": "^24.5.2",
     "jest": "^27.2.4",
     "prettier": "^2.4.1",
-    "release-it": "^14.11.6",
+    "release-it": "^16.1.5",
     "typescript": "^4.4.3"
   },
   "config": {

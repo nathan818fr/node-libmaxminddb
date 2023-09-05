@@ -47,11 +47,11 @@ git submodule init
 git submodule update --recursive
 ```
 
-Then install the dependencies and run `yarn test`:
+Then install the dependencies and run `npm run test`:
 
 ```bash
-yarn install
-yarn test
+npm ci
+npm run test
 ```
 
 ## Contributing

@@ -10,11 +10,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x]
+        node-version: [16.x, 18.x, 20.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
         lib-version: [prebuild]
         include:
-          - node-version: 10.x
+          - node-version: 16.x
             os: ubuntu-latest
             lib-version: global
     steps:

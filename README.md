@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/libmaxminddb.svg)](https://www.npmjs.com/package/libmaxminddb)
 ![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)
-[![Test Status](https://img.shields.io/github/workflow/status/nathan818fr/node-libmaxminddb/Test)](https://github.com/nathan818fr/node-libmaxminddb/actions/workflows/test.yml)
+[![Test Status](https://img.shields.io/github/actions/workflow/status/nathan818fr/node-libmaxminddb/test.yml?branch=master)](https://github.com/nathan818fr/node-libmaxminddb/actions/workflows/test.yml)
 
 Node.js bindings for [libmaxminddb](https://github.com/maxmind/libmaxminddb). \
 To read MaxMind Databases with the best performance (using memory-mapped files)!

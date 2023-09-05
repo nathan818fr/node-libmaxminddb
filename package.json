@@ -4,10 +4,15 @@
   "description": "Node.js bindings for libmaxminddb (to read MaxMind DB with the best performance - using memory-mapped file!)",
   "keywords": [
     "maxmind",
+    "maxminddb",
+    "libmaxminddb",
     "mmdb",
+    "mmdblookup",
     "geoip",
     "geoip2",
-    "geolite2"
+    "geolite2",
+    "geolocation",
+    "ip"
   ],
   "author": "Nathan Poirier <nathan@poirier.io>",
   "license": "Apache-2.0",

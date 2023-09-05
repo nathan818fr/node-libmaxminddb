@@ -14,12 +14,19 @@
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">node-libmaxminddb Documentation</a></li>
 <li><a href="MmdbReader.html">MmdbReader</a></li></ul>
-<h1>Class MmdbReader&lt;E&gt;</h1></div> 
+<h1>Class MmdbReader&lt;E&gt;</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Represents a reader for MaxMind DB databases.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></section> 
 <section class="tsd-panel">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameter-list">
 <li>
-<h4><span class="tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol"> extends </span><a href="../types/MmdbEntry.html" class="tsd-signature-type tsd-kind-type-alias">MmdbEntry</a> = <a href="../types/MmdbEntry.html" class="tsd-signature-type tsd-kind-type-alias">MmdbEntry</a></h4></li></ul></section> 
+<h4><span class="tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol"> extends </span><a href="../types/MmdbEntry.html" class="tsd-signature-type tsd-kind-type-alias">MmdbEntry</a> = <a href="../types/MmdbEntry.html" class="tsd-signature-type tsd-kind-type-alias">MmdbEntry</a></h4>
+<div class="tsd-comment tsd-typography"><p>The type of the entries in the database.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></section> 
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
@@ -49,25 +56,41 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature" id="fileName.fileName-1"><span class="tsd-signature-symbol">get</span> fileName<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4></li></ul></section>
+<div class="tsd-comment tsd-typography"><p>Gets the name of the database file which was opened, as passed to <a href="MmdbReader.html#open" class="tsd-kind-method">MmdbReader.open</a>.</p>
+<p>Note: This property remains accessible after the reader has been closed.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="fileSize" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>file<wbr/>Size</span><a href="#fileSize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature" id="fileSize.fileSize-1"><span class="tsd-signature-symbol">get</span> fileSize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4></li></ul></section>
+<div class="tsd-comment tsd-typography"><p>Gets the size of the database in bytes.</p>
+<p>Note: This property remains accessible after the reader has been closed.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="depth" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>depth</span><a href="#depth" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature" id="depth.depth-1"><span class="tsd-signature-symbol">get</span> depth<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4></li></ul></section>
+<div class="tsd-comment tsd-typography"><p>Gets the depth of the database search tree.</p>
+<p>Note: This property remains accessible after the reader has been closed.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="metadata" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>metadata</span><a href="#metadata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature" id="metadata.metadata-1"><span class="tsd-signature-symbol">get</span> metadata<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/MmdbMetadata.html" class="tsd-signature-type tsd-kind-interface">MmdbMetadata</a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="../interfaces/MmdbMetadata.html" class="tsd-signature-type tsd-kind-interface">MmdbMetadata</a></h4></li></ul></section></section>
+<div class="tsd-comment tsd-typography"><p>Gets the metadata for the database.</p>
+<p>Note: This property remains accessible after the reader has been closed.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/MmdbMetadata.html" class="tsd-signature-type tsd-kind-interface">MmdbMetadata</a></h4>
+<div class="tsd-comment tsd-typography"></div></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="open" class="tsd-anchor"></a>
@@ -75,6 +98,8 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="open.open-1"><span class="tsd-kind-call-signature">open</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="MmdbReader.html" class="tsd-signature-type tsd-kind-class">MmdbReader</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><a href="#open.open-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Opens a MaxMind DB database and returns a reader for it.</p>
+</div>
 <section class="tsd-panel">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameter-list">
@@ -84,25 +109,49 @@
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/MmdbReaderOpenOptions.html" class="tsd-signature-type tsd-kind-interface">MmdbReaderOpenOptions</a></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="MmdbReader.html" class="tsd-signature-type tsd-kind-class">MmdbReader</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></section>
+<h5><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/MmdbReaderOpenOptions.html" class="tsd-signature-type tsd-kind-interface">MmdbReaderOpenOptions</a></h5>
+<div class="tsd-comment tsd-typography"><p>The options for opening the database.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="MmdbReader.html" class="tsd-signature-type tsd-kind-class">MmdbReader</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4><p>A promise that resolves with a new reader on success; or a promise that rejects with an <a href="MmdbError.html" class="tsd-kind-class">MmdbError</a>
+  on failure.</p>
+
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="close" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>close</span><a href="#close" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="close.close-1"><span class="tsd-kind-call-signature">close</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><a href="#close.close-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></section>
+<div class="tsd-comment tsd-typography"><p>Closes the reader and releases any associated resources.</p>
+<p>This method is called automatically when the reader is garbage collected, so it is not necessary to call it
+explicitly. However it is recommended to call it explicitly when you are done with the reader, so that resources
+are released promptly.</p>
+<p>It&#39;s safe to call this method multiple times, even if the reader has already been closed.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4><p>A promise that resolves with a boolean indicating whether the reader was closed (true) or was already
+  closed (false). The promise will never reject.</p>
+
+<div class="tsd-comment tsd-typography"></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="lookup" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>lookup</span><a href="#lookup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="lookup.lookup-1"><span class="tsd-kind-call-signature">lookup</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">ip</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/MmdbLookupResult.html" class="tsd-signature-type tsd-kind-interface">MmdbLookupResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><a href="#lookup.lookup-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Looks up an IP address in the database.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">ip</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/MmdbLookupResult.html" class="tsd-signature-type tsd-kind-interface">MmdbLookupResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></section></section></div>
+<h5><span class="tsd-kind-parameter">ip</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The IP address to look up.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/MmdbLookupResult.html" class="tsd-signature-type tsd-kind-interface">MmdbLookupResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">E</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4><p>A promise that resolves to a <a href="../interfaces/MmdbLookupResult.html" class="tsd-kind-interface">MmdbLookupResult</a> on success (whether or not the IP address was
+  found); or a promise that rejects with <a href="GetAddrError.html" class="tsd-kind-class">GetAddrError</a> if the IP address is invalid; or a promise that
+  rejects with <a href="MmdbError.html" class="tsd-kind-class">MmdbError</a> if the lookup fails for any other reason.</p>
+
+<div class="tsd-comment tsd-typography"></div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

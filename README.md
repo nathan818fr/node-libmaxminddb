@@ -25,8 +25,8 @@ Otherwise look at the [advanced libmaxminddb installation instructions](https://
 const {MmdbReader} = require('libmaxminddb');
 
 MmdbReader.open({filename: 'GeoIP2-Country-Test.mmdb'}).then(async (mmdb) => {
-    const {netmask, entry} = await mmdb.lookup('50.114.1.1');
-    console.log(entry);
+  const {netmask, entry} = await mmdb.lookup('50.114.1.1');
+  console.log(entry);
 });
 ```
 
@@ -66,7 +66,7 @@ For the versions available, see the [tags on this repository](https://github.com
 
 ## Authors
 
--   [Nathan Poirier](https://github.com/nathan818fr) &lt;nathan@poirier.io&gt;
+- [Nathan Poirier](https://github.com/nathan818fr) &lt;nathan@poirier.io&gt;
 
 ## License
 

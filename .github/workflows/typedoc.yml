@@ -10,9 +10,9 @@ jobs:
   typedoc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js v18.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: v18.x
       - name: Generate
@@ -21,7 +21,7 @@ jobs:
           npm ci
           typedoc
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: typedoc
           folder: ./typedoc

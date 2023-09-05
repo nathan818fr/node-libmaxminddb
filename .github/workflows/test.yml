@@ -18,7 +18,7 @@ jobs:
             os: ubuntu-latest
             lib-version: global
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Install libmaxminddb (with apt)
@@ -27,7 +27,7 @@ jobs:
           echo 'NODE_LIBMAXMINDDB_VERSION=false' >>$GITHUB_ENV
         if: matrix.lib-version == 'global'
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci

@@ -59,6 +59,6 @@
   },
   "config": {
     "libmaxminddb_ignore_global": false,
-    "libmaxminddb_version": "1.6.0-1"
+    "libmaxminddb_version": "1.7.1-1"
   }
 }
